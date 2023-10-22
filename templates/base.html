@@ -22,6 +22,7 @@
     <link  href="{% static 'css/templatemo-grad-school.css' %}" rel="stylesheet">
     <link  href="{% static 'css/owl.css' %}" rel="stylesheet">
     <link  href="{% static 'css/lightbox.css' %}" rel="stylesheet">
+    
 
   </head>
   {% load static %}
@@ -49,7 +50,28 @@
           <li><a href="#section4">Courses</a></li>
           <!-- <li><a href="#section5">Video</a></li> -->
           <li><a href="#section6">Contact</a></li>
-          <li><a href="https://templatemo.com" class="external">External</a></li>
+          
+            {% if  not user.is_authenticated %}
+          
+                                        <li>
+                                            <a  href="{% url 'login' %}">Log in / Register </a>
+                                        </li>
+                                        {% endif %}
+                                        {% if user.is_authenticated %}
+                                        <!-- <li> -->
+                                            <li class="nav-item">
+                                               
+                                                    Hello, {{request.user}}
+                                                <a class="custom-btn btn click-scroll" href="{% url 'logout' %}">Logout </a>
+                                              </li>
+                                              
+                                            
+                                        {% endif %}
+                    {% comment %} <li class="nav-item">
+                                    <a class="custom-btn btn click-scroll" href="{% url 'login' %}">Log in / Register </a>
+                    </li> {% endcomment %}
+  
+         
         </ul>
       </nav>
     </header>
