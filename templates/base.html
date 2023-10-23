@@ -35,26 +35,37 @@
       <div class="logo">
         <a href="#"><em>Grad</em> School</a>
       </div>
-      <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
-      <nav id="menu" class="main-nav" role="navigation">
-        <ul class="main-menu">
-          <li><a href="#section1">Home</a></li>
-          <li class="has-submenu"><a href="#section2">About Us</a>
-            <ul class="sub-menu">
-              <li><a href="#section2">Who we are?</a></li>
-              <li><a href="#section3">What we do?</a></li>
-              <li><a href="#section3">How it works?</a></li>
-              <li><a href="https://templatemo.com/about" rel="sponsored" class="external">External URL</a></li>
-            </ul>
-          </li>
-          <li><a href="#section4">Courses</a></li>
-          <!-- <li><a href="#section5">Video</a></li> -->
-          <li><a href="#section6">Contact</a></li>
-          
-            {% if  not user.is_authenticated %}
-          
-                                        <li>
-                                            <a  href="{% url 'login' %}">Log in / Register </a>
+      <nav class="navbar navbar-expand-lg ">
+        <div class="container">
+            <div class="py-2 px-2">
+                <ul class="nav-main-align">
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href=""><small class="small-title"><strong
+                                    class="text-warning"></strong></small> Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href=""><small class="small-title"><strong
+                                    class="text-warning"></strong></small> About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href=""><small class="small-title"><strong
+                                    class="text-warning"></strong></small> Services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href=""><small class="small-title"><strong
+                                    class="text-warning"></strong></small> Projects</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href=""><small class="small-title"><strong
+                                    class="text-warning"></strong></small> Contact</a>
+                    </li>
+                    {% if  not user.is_authenticated %}
+                                        <li class="nav-item">
+                                            <a  class="custom-btn nav-link click-scroll" href="{% url 'login' %}">Log in / Register </a>
                                         </li>
                                         {% endif %}
                                         {% if user.is_authenticated %}
@@ -62,18 +73,21 @@
                                             <li class="nav-item">
                                                
                                                     Hello, {{request.user}}
-                                                <a class="custom-btn btn click-scroll" href="{% url 'logout' %}">Logout </a>
+                                                <a  class="custom-btn nav-link click-scroll" href="{% url 'logout' %}">Logout </a>
                                               </li>
                                               
                                             
                                         {% endif %}
                     {% comment %} <li class="nav-item">
-                                    <a class="custom-btn btn click-scroll" href="{% url 'login' %}">Log in / Register </a>
+                                    <a  class="custom-btn nav-link click-scroll" href="{% url 'login' %}">Log in / Register </a>
                     </li> {% endcomment %}
-  
-         
-        </ul>
-      </nav>
+
+                </ul>
+                <div>
+
+                </div>
+    </nav>
+
     </header>
 
     {% block body %}{% endblock body %}
