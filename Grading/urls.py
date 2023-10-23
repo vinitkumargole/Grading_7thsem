@@ -17,9 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 
-admin.site.site_header = "Innovation WithUs Admin"
-admin.site.site_title = "Innovation WithUs Admin Portal"
-admin.site.index_title = "Welcome to Innovation WithUs Researcher Portal"
+admin.site.site_header = "Grad School Admin"
+admin.site.site_title = "Grad School Admin Portal"
+admin.site.index_title = "Welcome to Grad School Researcher Portal"
 
 
 urlpatterns = [

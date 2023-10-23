@@ -4,6 +4,7 @@ from datetime import datetime
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from .forms import CreateUserForm
+from home.models import Contact
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
@@ -43,3 +44,13 @@ def signup(request):
             context = {'form':form}
             return render(request, 'signup.html',context= context)
 
+
+def contact(request):
+    if request.method =="POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        contact= Contact(name=name, email=email, message=message, date=datetime.today())
+        contact.save()
+        messages.success(request, 'Your message has been send.')
+    return render(request,'index.html')

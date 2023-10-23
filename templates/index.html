@@ -3,13 +3,16 @@
 {% load static %} {% block body %}
 
 <!-- ***** Main Banner Area Start ***** -->
+
 <section class="section main-banner" id="top" data-section="section1">
   <video autoplay muted loop id="bg-video">
     <source src="static/images/course-video.mp4" type="video/mp4" />
   </video>
 
   <div class="video-overlay header-text">
+   
     <div class="caption">
+     
       <h6>Graduate School of Management</h6>
       <h2><em>Your</em> Classroom</h2>
       <div class="main-button">
@@ -523,7 +526,8 @@
         </div>
       </div>
       <div class="col-md-6">
-        <form id="contact" action="" method="post">
+        <form id="contact" action="/index" method="post">
+          {% csrf_token %}
           <div class="row">
             <div class="col-md-6">
               <fieldset>
@@ -541,7 +545,7 @@
               <fieldset>
                 <input
                   name="email"
-                  type="text"
+                  type="email"
                   class="form-control"
                   id="email"
                   placeholder="Your Email"
@@ -574,8 +578,8 @@
       <div class="col-md-6">
         <div id="map">
           <iframe
-            src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed"
-            width="100%"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14709.966704536215!2d75.943164!3d22.821292!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x426141aa8141f7a5!2sAcropolis+Institute+Of+Technology+And+Research!5e0!3m2!1sen!2sin!4v1522227737552"
+          width="100%"
             height="422px"
             frameborder="0"
             style="border: 0"

@@ -90,9 +90,17 @@
 
     </header>
 
+
+
     {% block body %}{% endblock body %}
 
     <footer>
+      {% for msg in messages %}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Holy!</strong> {{msg}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+  {% endfor %}  
         <div class="container">
           <div class="row">
             <div class="col-md-12">
