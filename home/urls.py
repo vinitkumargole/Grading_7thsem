@@ -8,5 +8,6 @@ urlpatterns = [
    path('login/', views.signin, name="login"),
    path('logout/', views.logoutUser, name="logout"),
    path('signup/', views.signup, name="signup"),
-    path('index', views.contact, name="contact"),
+   path('index', views.contact, name="contact"),
+   path('trigger-flask-function/', views.trigger_flask_function, name='trigger-flask-function'),
 ]

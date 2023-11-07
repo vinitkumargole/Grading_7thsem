@@ -8,6 +8,25 @@ from home.models import Contact
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+import requests 
+from django.http import HttpResponse
+
+def trigger_flask_function(request):
+    if request.method == 'POST':
+        # Define the Flask project URL
+        flask_url = "http://localhost:5000"  # Adjust the URL as needed
+
+        # Make a POST request to the Flask endpoint
+        response = requests.post(flask_url + '/trigger-flask-function')
+
+        if response.status_code == 200:
+            # Capture the Flask response and return it as an HttpResponse
+            flask_response = response.text
+            return HttpResponse(flask_response)
+        else:
+            return HttpResponse("Failed to trigger Flask function.")
+    else:
+        return HttpResponse("Invalid request method.")
 
 
 # Create your views here.
