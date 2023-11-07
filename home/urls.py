@@ -10,6 +10,6 @@ urlpatterns = [
    path('signup/', views.signup, name="signup"),
    path('index', views.contact, name="contact"),
    path('trigger-flask-function/', views.trigger_flask_function, name='trigger-flask-function'),
-   path('index', views.contact, name="enroll"),
+   path('enroll', views.enroll, name="enroll"),
 
 ]

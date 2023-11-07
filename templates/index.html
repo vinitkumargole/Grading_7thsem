@@ -229,7 +229,7 @@
               online courses
             </h6>
           </div>
-          <form id="enroll" action="index" method="post">
+          <form id="enroll" action="/enroll" method="post">
             {% csrf_token %}
             <div class="row">
               <div class="col-md-12">
@@ -259,7 +259,7 @@
               <div class="col-md-12">
                 <fieldset>
                   <input
-                    name="phone-number"
+                    name="phone_number"
                     type="text"
                     class="form-control"
                     id="phone-number"
