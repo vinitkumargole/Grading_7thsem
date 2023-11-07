@@ -4,7 +4,7 @@ from datetime import datetime
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from .forms import CreateUserForm
-from home.models import Contact
+from home.models import Contact,Enroll
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
@@ -70,6 +70,16 @@ def contact(request):
         email = request.POST.get('email')
         message = request.POST.get('message')
         contact= Contact(name=name, email=email, message=message, date=datetime.today())
+        contact.save()
+        messages.success(request, 'Your message has been send.')
+    return render(request,'index.html')
+
+def enroll(request):
+    if request.method =="POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone_number = request.POST.get('phone_number')
+        contact= Enroll(name=name, email=email, phone_number=phone_number, date=datetime.today())
         contact.save()
         messages.success(request, 'Your message has been send.')
     return render(request,'index.html')
